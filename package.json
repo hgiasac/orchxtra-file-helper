@@ -1,0 +1,52 @@
+{
+  "name": "@orchxtra/file-helper",
+  "version": "0.1.0",
+  "description": "Orchxtra common file types",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "test": "NODE_ENV=test jest",
+    "clean": "rm -rf lib && rm -rf .nyc_output && rm -rf coverage",
+    "install": "npm run build"
+  },
+  "keywords": [
+    "file"
+  ],
+  "author": "Toan Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "@types/joi": "^13.4.0",
+    "@types/knex": "^0.14.16",
+    "@types/node": "^10.5.2"
+  },
+  "peerDependencies": {
+    "joi": "*",
+    "knex": "*"
+  },
+  "devDependencies": {
+    "jest": "^23.4.1",
+    "ts-jest": "^23.0.1",
+    "tslint": "^5.11.0",
+    "tslint-consistent-codestyle": "^1.13.2",
+    "tslint-eslint-rules": "^5.3.1",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "bail": true,
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testEnvironment": "node",
+    "collectCoverage": true
+  }
+}
