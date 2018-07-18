@@ -14,7 +14,7 @@ export interface IFileFilter {
   status?: StatusCode | StatusCode[];
 }
 
-interface ICommonFileModel {
+export interface ICommonFileModel {
   subjectId: string;
   name: string;
   description?: string;
