@@ -37,6 +37,8 @@ export function createFileTable(
       fileColumns(table);
       timestamps(knex, table);
 
+      table.uuid("createdBy").index();
+      table.uuid("updatedBy");
       table.text("status").notNullable();
 
       table.index(["subjectId", "status"]);

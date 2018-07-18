@@ -10,6 +10,8 @@ export interface IFileModelInput {
 export interface IFileModel extends IFileModelInput {
   id: string;
   createdAt: Date;
+  createdBy: Date;
   updatedAt: Date;
+  updatedBy: Date;
   status: string;
 }
