@@ -23,3 +23,18 @@ export function encodeBase64(input: ArrayBuffer, extension: string): string {
 
   return metadata + Buffer.from(input).toString("base64");
 }
+
+/**
+ * Parse query value to array
+ * @param input 
+ */
+export function parseArrayQuery(input: string | string[]): string[] {
+
+  return !input ? []
+    : Array.isArray(input)
+    ? input
+      : typeof input === "string"
+        ? input.split(",").map((s) => s.trim())
+        : [input];
+
+}

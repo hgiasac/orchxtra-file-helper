@@ -1,3 +1,18 @@
+export enum StatusCode {
+  Active = "active",
+  Inactive = "inactive",
+  Deleted = "deleted"
+}
+
+export interface IUpdateOptions {
+  updatedBy: string;
+  note?: string;
+}
+
+export interface IFileFilter {
+  subjectId?: string;
+  status?: StatusCode | StatusCode[];
+}
 
 interface ICommonFileModel {
   subjectId: string;
@@ -7,6 +22,7 @@ interface ICommonFileModel {
   fileExtension: string;
 
 }
+
 export interface IFileModelInput extends ICommonFileModel {
   fileData: string;
 }
