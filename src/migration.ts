@@ -1,5 +1,4 @@
 import * as Knex from "knex";
-import { StatusCode } from "../../../migration/utils";
 
 export function primaryUUID(
   knex: Knex,
@@ -38,8 +37,7 @@ export function createFileTable(
       fileColumns(table);
       timestamps(knex, table);
 
-      table.text("status").notNullable()
-      .defaultTo(StatusCode.Active);
+      table.text("status").notNullable();
 
       table.index(["subjectId", "status"]);
     });
