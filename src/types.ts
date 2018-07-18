@@ -1,17 +1,24 @@
-export interface IFileModelInput {
+
+interface ICommonFileModel {
   subjectId: string;
   name: string;
   description?: string;
   fileName: string;
-  fileData: string;
   fileExtension: string;
+
+}
+export interface IFileModelInput extends ICommonFileModel {
+  fileData: string;
 }
 
-export interface IFileModel extends IFileModelInput {
+export interface IFileModel extends ICommonFileModel {
+
   id: string;
+  fileData: ArrayBuffer;
+
   createdAt: Date;
-  createdBy: Date;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: Date;
+  updatedBy: string;
   status: string;
 }
