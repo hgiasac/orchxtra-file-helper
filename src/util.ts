@@ -19,14 +19,14 @@ export function decodeBase64(
 }
 
 export function encodeBase64(input: ArrayBuffer, extension: string): string {
-  const metadata = extension ? `data:${extension};base64,` : "";
+  const metadata = `data:${extension || ""};base64,`;
 
   return metadata + Buffer.from(input).toString("base64");
 }
 
 /**
  * Parse query value to array
- * @param input 
+ * @param input
  */
 export function parseArrayQuery(input: string | string[]): string[] {
 
@@ -38,3 +38,4 @@ export function parseArrayQuery(input: string | string[]): string[] {
         : [input];
 
 }
+

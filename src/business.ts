@@ -18,7 +18,7 @@ export function createFile<
     status: StatusCode.Active,
     ...<object> input,
     fileData: avatarFile.data,
-    fileExtension: avatarFile.extension,
+    fileExtension: avatarFile.extension || input.fileExtension,
     createdAt: new Date(),
     updatedAt: new Date(),
     createdBy: updateOptions.updatedBy,
@@ -48,7 +48,7 @@ export function updateFile<
     .update({
       ...<object> input,
       fileData: avatarFile.data,
-      fileExtension: avatarFile.extension,
+      fileExtension: avatarFile.extension || input.fileExtension,
       updatedAt: new Date(),
       updatedBy: updateOptions.updatedBy
     }, "*")
