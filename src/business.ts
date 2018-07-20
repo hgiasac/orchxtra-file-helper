@@ -60,9 +60,14 @@ export function deleteFile<M extends IFileModel = IFileModel>(
   model: M,
   updateOptions: IUpdateOptions): Promise<M> {
 
-  return updateFile(queryBuilder, model, <any> {
-    status: StatusCode.Deleted,
-  }, updateOptions);
+  return <any> queryBuilder
+    .where("id", model.id)
+    .update({
+      status: StatusCode.Deleted,
+      updatedAt: new Date(),
+      updatedBy: updateOptions.updatedBy
+    }, "*")
+    .then(([m]) => m);
 }
 
 export function fileFilterQuery(

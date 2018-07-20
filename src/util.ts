@@ -38,4 +38,3 @@ export function parseArrayQuery(input: string | string[]): string[] {
         : [input];
 
 }
-
