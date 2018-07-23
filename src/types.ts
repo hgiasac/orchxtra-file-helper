@@ -4,6 +4,14 @@ export enum StatusCode {
   Deleted = "deleted"
 }
 
+export const fileInfoColumns = [
+  "id", "name", "description",
+  "fileName", "fileExtension",
+  "createdAt", "createdBy",
+  "updatedAt", "updatedBy",
+  "status"
+];
+
 export interface IUpdateOptions {
   updatedBy: string;
   note?: string;
