@@ -27,7 +27,7 @@ export function serializeFile(input: IFileModel): IFileResponse {
     description: input.description,
     fileName: input.fileName,
 
-    fileData: encodeBase64(input.fileData, input.fileExtension),
+    fileData: input.fileData ? encodeBase64(input.fileData, input.fileExtension) : null,
     fileExtension: input.fileExtension,
 
     createdBy: input.createdBy,
