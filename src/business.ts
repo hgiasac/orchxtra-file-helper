@@ -41,14 +41,21 @@ export function updateFile<
   updateOptions: IUpdateOptions
 ): Promise<M> {
 
-  const avatarFile = decodeBase64(input.fileData);
+  let dataForm = {};
+
+  if (input.fileData) {
+    const avatarFile = decodeBase64(input.fileData);
+    dataForm = {
+      fileData: avatarFile.data,
+      fileExtension: avatarFile.extension || input.fileExtension,
+    };
+  }
 
   return <any> queryBuilder
     .where("id", model.id)
     .update({
       ...<object> input,
-      fileData: avatarFile.data,
-      fileExtension: avatarFile.extension || input.fileExtension,
+      ...dataForm,
       updatedAt: new Date(),
       updatedBy: updateOptions.updatedBy
     }, "*")
