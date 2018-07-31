@@ -22,6 +22,12 @@ export interface IFileFilter {
   status?: StatusCode | StatusCode[];
 }
 
+export interface IFileJSONInput {
+  name?: string;
+  data: string;
+  extension: string;
+}
+
 export interface ICommonFileModel {
   subjectId: string;
   name: string;
