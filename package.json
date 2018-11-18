@@ -16,8 +16,8 @@
   "author": "Toan Nguyen",
   "license": "MIT",
   "dependencies": {
-    "@types/joi": "^13.6.0",
-    "@types/knex": "^0.14.25"
+    "@types/joi": "*",
+    "@types/knex": "*"
   },
   "peerDependencies": {
     "joi": "*",
